@@ -4,16 +4,16 @@ import sqlite3
 app = Flask(__name__)
 
 def init_db():
-    with sqlite3.connect('pb1_db.db') as conn:
-        conn.execute('''CREATE TABLE IF NOT EXISTS pb1 
+    with sqlite3.connect('phonebook.db') as conn:
+        conn.execute('''CREATE TABLE IF NOT EXISTS contacts 
               (pbid INTEGER PRIMARY KEY, name TEXT, phone TEXT)''')
     conn.commit()
     conn.close()
 
 @app.route('/')
 def index():
-    with sqlite3.connect('pb1_db.db') as conn:
-        contacts = conn.execute('''SELECT * FROM pb1''').fetchall()
+    with sqlite3.connect('phonebook.db') as conn:
+        contacts = conn.execute('''SELECT * FROM contacts''').fetchall()
     conn.close()
     return render_template('index.html', contacts=contacts)
 
@@ -22,8 +22,8 @@ def add():
     if request.method == 'POST':
         name = request.form['name']
         phone = request.form['phone']
-        with sqlite3.connect('pb1_db.db') as conn:
-          conn.execute('''INSERT INTO pb1 (name, phone) VALUES (?, ?)''', (name, phone))
+        with sqlite3.connect('phonebook.db') as conn:
+          conn.execute('''INSERT INTO contacts (name, phone) VALUES (?, ?)''', (name, phone))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
@@ -31,21 +31,21 @@ def add():
 
 @app.route('/delete/<int:pbid>')
 def delete(pbid):
-    with sqlite3.connect('pb1_db.db') as conn:
-        conn.execute('''DELETE FROM pb1 WHERE pbid = ?''', (pbid,))
+    with sqlite3.connect('phonebook.db') as conn:
+        conn.execute('''DELETE FROM contacts WHERE pbid = ?''', (pbid,))
     conn.commit()
     conn.close()
-    return render_template('index.html')
+    return redirect(url_for('index'))
 
 @app.route('/edit/<int:pbid>', methods=['GET', 'POST'])
 def edit(pbid):
-    with sqlite3.connect('pb1_db.db') as conn:
-        contact = conn.execute('''SELECT * FROM pb1 WHERE pbid = ?''', (pbid,)).fetchone()
+    with sqlite3.connect('phonebook.db') as conn:
+        contact = conn.execute('''SELECT * FROM contacts WHERE pbid = ?''', (pbid,)).fetchone()
     if request.method == 'POST':
         name = request.form['name']
         phone = request.form['phone']
-        with sqlite3.connect('pb1_db.db') as conn:
-            conn.execute('''UPDATE pb1 SET name = ?, phone = ? WHERE pbid = ?''', (name, phone, pbid))
+        with sqlite3.connect('phonebook.db') as conn:
+            conn.execute('''UPDATE contacts SET name = ?, phone = ? WHERE pbid = ?''', (name, phone, pbid))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
