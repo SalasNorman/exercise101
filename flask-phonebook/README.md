@@ -24,22 +24,24 @@ This is a simple Phonebook application built using Flask, providing CRUD (Create
    ```
 
 2. **Create a Virtual Environment**:
+   this command use in ubuntu wsl
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install Dependencies**:
+4. **Install Dependencies**:
+   this command use in ubuntu wsl
    ```bash
    pip install -r requirements.txt
    ```
 
-5. **Run the Application**:
+6. **Run the Application**:
    ```bash
    python app.py
    ```
 
-6. **Access the Application**:
+7. **Access the Application**:
    Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ## Project Structure
