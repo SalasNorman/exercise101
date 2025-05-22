@@ -1,6 +1,7 @@
 # Flask Phonebook Application
 
 This is a simple Phonebook application built using Flask, providing CRUD (Create, Read, Update, Delete) functionality. The application uses SQLite as its database.
+NOTE: this project use command for ubuntu wsl
 
 ## Features
 
@@ -24,14 +25,12 @@ This is a simple Phonebook application built using Flask, providing CRUD (Create
    ```
 
 2. **Create a Virtual Environment**:
-   this command use in ubuntu wsl
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 4. **Install Dependencies**:
-   this command use in ubuntu wsl
    ```bash
    pip install -r requirements.txt
    ```
