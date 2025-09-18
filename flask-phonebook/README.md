@@ -21,7 +21,7 @@ NOTE: this project use command for ubuntu wsl
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/SalasNorman/exercise101.git
-   cd flask-phonebook
+   cd exercise101\flask-phonebook
    ```
 
 2. **Create a Virtual Environment**:
