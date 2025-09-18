@@ -42,8 +42,9 @@ NOTE: this project use command for ubuntu wsl
    python app.py
    ```
 
-7. **Access the Application**:
-   Open your browser and navigate to `http://127.0.0.1:5000`.
+7. **Access the Application**:   
+   Open your browser and navigate to
+   ```http://127.0.0.1:5000```
 
 ## Project Structure
 
