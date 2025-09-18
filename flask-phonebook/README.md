@@ -25,6 +25,7 @@ NOTE: this project use command for ubuntu wsl
    ```
 
 2. **Create a Virtual Environment**:
+   Note: python must already installed.
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
