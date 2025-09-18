@@ -24,12 +24,13 @@ NOTE: this project use command for ubuntu wsl
    cd exercise101\flask-phonebook
    ```
 
-2. **Create a Virtual Environment**:
-   Note: python must already installed.
+2. **Create a Virtual Environment**:    
+   Note: python must already installed. 
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+   ```  
+   if `python3` doesnt work, try `python`
 
 4. **Install Dependencies**:
    ```bash
