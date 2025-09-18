@@ -25,12 +25,11 @@ NOTE: this project use command for ubuntu wsl
    ```
 
 2. **Create a Virtual Environment**:    
-   Note: python must already installed. 
+   Note: this is for linux, escape this if our windows
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```  
-   if `python3` doesnt work, try `python`
+   ```
 
 4. **Install Dependencies**:
    ```bash
