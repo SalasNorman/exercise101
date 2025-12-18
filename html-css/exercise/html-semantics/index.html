@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Semantics</title>
+</head>
+<body>
+    <!-- heading level is like bullet nested -->
+    <h1>Homepage</h1>
+
+    <!-- 
+    stong and b is not the same.
+    stong use for urgency, em for empashize. b use for style and same for i
+    -->
+    <p><strong>Lorem</strong> <b>ipsum</b> <em>dolor sit amet</em> <i>consectetur</i> adipisicing elit. Quidem, laborum?</p>
+
+    <!-- 
+    its important to use 
+    `rel="noopener noreferrer" with target="_blank"`
+    for security purpose 
+    -->
+    <a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">About The Odin Project</a>
+    
+    <br><br>
+    <!-- use ./ to prevent issue -->
+    <a href="./pages/about.html">About</a>
+
+    <br><br>
+    <!-- use alt in image for semantic html -->
+    <!-- not required, but good habit to 
+     use image size attribute(width & height)
+     aside from CSS
+     to prevent content jumping as image load -->
+    <img src="./images/dog.jpg" alt="dog" height="310" width="310">
+</html>

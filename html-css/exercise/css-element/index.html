@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Elements</title>
+    <!-- The major difference between classes and IDs is that an element can only have one ID. 
+     It cannot be repeated on a single page and should not contain any whitespace -->
+
+    <style>
+      /* universal selector */
+      * {
+        font-family: monospace, serif;
+        font-size: 20px;
+        outline: 2px solid red;
+      }
+      /* type selector */
+      div {
+        color: purple;
+      }
+      /* class selector*/
+      .im-class {
+        color: red;
+      }
+      /* id selector*/
+      #im-ID {
+        background-color: red;
+      }
+
+      /* Group selector */
+      .g1,
+      .g2 {
+        color: white;
+        background-color: black;
+      }
+      .g1 {
+        text-transform: lowercase;
+        font-weight: bold;
+      }
+      .g2 {
+        text-transform: uppercase;
+      }
+
+      /* Chain Selector */
+      .subsection.header {
+        color: green;
+      }
+      .subsection#preview {
+        color: blue;
+      }
+
+      /* Descendant combinator */
+      .ancestor .contents {
+        text-align: center;
+        color: blueviolet;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- type selector -->
+    <div>I'm div</div>
+    <div>I'm also div</div>
+    <p>I'm p</p>
+    <div>Me too! Wait, I'm div</div>
+
+    <!-- class selector -->
+    <div class="im-class">I'm the class selector. I can be used on multiple times</div>
+
+    <!-- id selector -->
+    <div id="im-ID">I'm ID selector. The one always unique.</div>
+
+    <!-- Group Selector -->
+    <div class="g1">GROUP SELECTOR HERE!</div>
+    <div class="g2">Group selector here!</div>
+
+    <!-- Chain Selector -->
+    <div>
+      <div class="subsection header">Latest Posts</div>
+      <p class="subsection" id="preview">
+        This is where a preview for a post might go.
+      </p>
+    </div>
+
+    <!-- Descendant combinator -->
+    <div class="ancestor">
+      <div class="contents">
+        <div class="contents"></div>
+      </div>
+    </div>
+    <div class="contents"></div>
+  </body>
+</html>
